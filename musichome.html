@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <script src="https://kit.fontawesome.com/14d6486a37.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="Images/music-solid.svg" type="image/gif">
+    <link type="text/css" rel="stylesheet" href="musichome.css">
+
+</head>
+
+<body>
+
+    <!-- HEADER NAVBAR -->
+    <header class="shadow">
+
+        <ul>
+
+            <li><img src="Images/front-end-skills.png" class="nav-image"></li>
+            <li>My<br>Studio</li>
+            <li>
+                <a href="#">
+                    <h3 id="welcome">WELCOME HOME</h3>
+                </a>
+            </li>
+
+            <span id="dashboard">
+                    <li><input type="text" placeholder="Search" id="search" class="shadow"></li>
+                    <li><i class="fas fa-bell"></i></li>
+                    <li><img src="Images/girlwithcalendar.jpg" class="nav-image shadow"></li>
+                </span>
+        </ul>
+
+    </header>
+
+    <div id="outer">
+        <main>
+
+            <section id="carousel" aria-label="Gallery">
+                <div id="main-carousel">
+
+                    <ul class="carousel__viewport">
+                        <li id="carousel__slide1" tabindex="0" class="carousel__slide">
+
+                            <div class="carousel__snapper" id="slide1">
+                                <a href="#carousel__slide4" class="carousel__prev">Go to last slide</a>
+                                <img src="Images/gallery1.jpg">
+                                <a href="#carousel__slide2" class="carousel__next">Go to next slide</a>
+                            </div>
+                        </li>
+                        <li id="carousel__slide2" tabindex="0" class="carousel__slide">
+                            <div class="carousel__snapper"></div>
+                            <a href="#carousel__slide1" class="carousel__prev">Go to previous slide</a>
+                            <img src="Images/gallery2.jpg">
+                            <a href="#carousel__slide3" class="carousel__next">Go to next slide</a>
+                        </li>
+                        <li id="carousel__slide3" tabindex="0" class="carousel__slide">
+                            <div class="carousel__snapper"></div>
+                            <a href="#carousel__slide2" class="carousel__prev">Go to previous slide</a>
+                            <img src="Images/gallery3.jpg">
+                            <a href="#carousel__slide4" class="carousel__next">Go to next slide</a>
+                        </li>
+                        <li id="carousel__slide4" tabindex="0" class="carousel__slide">
+                            <div class="carousel__snapper"></div>
+                            <a href="#carousel__slide3" class="carousel__prev">Go to previous slide</a>
+                            <img src="Images/gallery4.jpg">
+                            <a href="#carousel__slide1" class="carousel__next">Go to first slide</a>
+                        </li>
+                    </ul>
+                    <aside class="carousel__navigation">
+                        <ul class="carousel__navigation-list">
+                            <li class="carousel__navigation-item">
+                                <a href="#carousel__slide1" class="carousel__navigation-button shadow">Go to slide 1</a>
+
+                            </li>
+                            <li class="carousel__navigation-item">
+                                <a href="#carousel__slide2" class="carousel__navigation-button section-shadow">Go to slide 2</a>
+                            </li>
+                            <li class="carousel__navigation-item">
+                                <a href="#carousel__slide3" class="carousel__navigation-button shadow">Go to slide 3</a>
+                            </li>
+                            <li class="carousel__navigation-item">
+                                <a href="#carousel__slide4" class="carousel__navigation-button section-shadow">Go to slide 4</a>
+                            </li>
+                        </ul>
+                    </aside>
+                </div>
+
+            </section>
+
+            <!-- LATEST PUNJABI -->
+            <section class="section-shadow">
+                <h4 class="section-heading">LATEST PUNJABI</h4>
+                <div id="latest-release">
+                    <ul class="horizontal-list main-flex">
+                        <li class="release mtb shadow">
+                            <a href="#lightbox">
+                                <img src="Images/beach.jpeg" class="release-image">
+                                <div class="release-desc">
+                                    <h4 class="release-title">Choo Loo</h4>
+                                    <p>OCT 12,2015</p>
+                                </div>
+
+
+
+                                <i class="fas fa-ellipsis-h icon"></i>
+                            </a>
+                        </li>
+
+                        <li class="release mtb shadow">
+                            <a href="#lightbox">
+                                <img src="Images/beach.jpeg" class="release-image">
+                                <div class="release-desc">
+                                    <h4 class="release-title">Choo Loo</h4>
+                                    <p>OCT 12,2015</p>
+                                </div>
+                                <i class="fas fa-ellipsis-h icon"></i>
+                            </a>
+                        </li>
+
+                        <li class="release mtb shadow">
+                            <a href="#lightbox">
+                                <img src="Images/beach.jpeg" class="release-image">
+                                <div class="release-desc">
+                                    <h4 class="release-title">Choo Loo</h4>
+                                    <p>OCT 12,2015</p>
+                                </div>
+                                <i class="fas fa-ellipsis-h icon"></i>
+                            </a>
+                        </li>
+
+                        <li class="release mtb shadow">
+                            <a href="#lightbox">
+                                <img src="Images/beach.jpeg" class="release-image">
+                                <div class="release-desc">
+                                    <h4 class="release-title">Choo Loo</h4>
+                                    <p>OCT 12,2015</p>
+                                </div>
+                                <i class="fas fa-ellipsis-h icon"></i>
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+            </section>
+
+
+            <!-- ARTISTS -->
+            <section class="section-shadow">
+                <h4 class="section-heading">ARTISTS</h4>
+                <div class="artists">
+                    <ul class="main-flex horizontal-list">
+                        <li class="shadow">
+                            <a href="singleplaylist.html">
+                                <img src="images/singer2.jpg" class="rounded-image">
+                                <p>Arijit Singh</p>
+                            </a>
+                        </li>
+                        <li class="shadow">
+                            <a href="singleplaylist.html">
+                                <img src="images/singer.jpg" class="rounded-image">
+                                <p>Neha Kakkar</p>
+                            </a>
+                        </li>
+                        <li class="shadow">
+                            <a href="singleplaylist.html">
+                                <img src="images/singer2.jpg" class="rounded-image">
+                                <p>Arijit Singh</p>
+                            </a>
+                        </li>
+                        <li class="shadow">
+                            <a href="singleplaylist.html">
+                                <img src="images/singer.jpg" class="rounded-image">
+                                <p>Neha Kakkar</p>
+                            </a>
+                        </li>
+                        <li class="shadow">
+                            <a href="singleplaylist.html">
+                                <img src="images/singer2.jpg" class="rounded-image">
+                                <p>Arijit Singh</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- HINDI SUROOR -->
+            <section class="section-shadow">
+                <h4 class="section-heading">HINDI SUROOR</h4>
+                <div class="artists">
+                    <ul class="main-flex horizontal-list">
+                        <li class="shadow">
+                            <a href="singleplaylist.html">
+                                <img src="images/art.jpg">
+                                <p>Khairiyat</p>
+                            </a>
+                        </li>
+                        <li class="shadow">
+                            <a href="singleplaylist.html">
+                                <img src="images/disc.jpg">
+                                <p>Darasal</p>
+                            </a>
+                        </li>
+                        <li class="shadow">
+                            <a href="singleplaylist.html">
+                                <img src="images/art.jpg">
+                                <p>Khairiyat</p>
+                            </a>
+                        </li>
+                        <li class="shadow">
+                            <a href="singleplaylist.html">
+                                <img src="images/disc.jpg">
+                                <p>Darasal</p>
+                            </a>
+                        </li>
+                        <li class="shadow">
+                            <a href="singleplaylist.html">
+                                <img src="images/art.jpg">
+                                <p>Khairiyat</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </section>
+
+            <!-- URBAN PUNJABI TADKA -->
+            <section class="section-shadow">
+                <h4 class="section-heading">URBAN PUNJABI TADKA</h4>
+                <div class="artists">
+                    <ul class="main-flex horizontal-list">
+                        <li class="shadow">
+                            <a href="singleplaylist.html">
+                                <img src="images/flower1.jpg">
+                                <p>Laare</p>
+                            </a>
+                        </li>
+                        <li class="shadow">
+                            <a href="singleplaylist.html">
+                                <img src="images/flower2.jpg">
+                                <p>8 Parche</p>
+                            </a>
+                        </li>
+                        <li class="shadow">
+                            <a href="singleplaylist.html">
+                                <img src="images/flower1.jpg">
+                                <p>Laare</p>
+                            </a>
+                        </li>
+                        <li class="shadow">
+                            <a href="singleplaylist.html">
+                                <img src="images/flower2.jpg">
+                                <p>8 Parche</p>
+                            </a>
+                        </li>
+                        <li class="shadow">
+                            <a href="singleplaylist.html">
+                                <img src="images/flower1.jpg">
+                                <p>Laare</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </section>
+        </main>
+
+        <!-- ASIDE SECTION -->
+        <aside id="aside">
+
+            <section id="recently-played">
+                <h3 class="aside-heading zoom">QUEUE</h3>
+                <div class="song shadow">
+                    <h6>01</h6>
+                    <img src="Images/headphones.jpg" class="display-img">
+                    <div class="desc">
+                        <h5>Imagine Dragons</h5>
+                        <p>Pop Band</p>
+                    </div>
+                    <i class="far fa-heart icon"></i>
+                </div>
+
+                <div class="song shadow">
+                    <h6>02</h6>
+                    <img src="Images/headphones.jpg" class="display-img">
+                    <div class="desc">
+                        <h5>Imagine Dragons</h5>
+                        <p>Pop Band</p>
+                    </div>
+                    <i class="far fa-heart icon"></i>
+                </div>
+
+                <div class="song shadow">
+                    <h6>03</h6>
+                    <img src="Images/headphones.jpg" class="display-img">
+                    <div class="desc">
+                        <h5>Imagine Dragons</h5>
+                        <p>Pop Band</p>
+                    </div>
+                    <i class="far fa-heart icon"></i>
+                </div>
+
+                <div class="song shadow">
+                    <h6>04</h6>
+                    <img src="Images/headphones.jpg" class="display-img">
+                    <div class="desc">
+                        <h5>Imagine Dragons</h5>
+                        <p>Pop Band</p>
+                    </div>
+                    <i class="far fa-heart icon"></i>
+                </div>
+
+                <div class="song shadow">
+                    <h6>05</h6>
+                    <img src="Images/headphones.jpg" class="display-img">
+                    <div class="desc">
+                        <h5>Imagine Dragons</h5>
+                        <p>Pop Band</p>
+                    </div>
+                    <i class="far fa-heart icon"></i>
+                </div>
+
+                <div class="song shadow">
+                    <h6>06</h6>
+                    <img src="Images/headphones.jpg" class="display-img">
+                    <div class="desc">
+                        <h5>Imagine Dragons</h5>
+                        <p>Pop Band</p>
+                    </div>
+                    <i class="far fa-heart icon"></i>
+                </div>
+            </section>
+
+        </aside>
+    </div>
+
+    <footer id="lightbox">
+        <a href="#" style="color: #e0f2ff;">X</a>
+        <div id="lightbox-content">
+
+            <div class="inline-block" id="audio-left">
+                <i class="fas fa-step-backward padd"></i>
+                <i class="fas fa-play-circle padd"></i>
+                <i class="fas fa-step-forward padd"></i>
+            </div>
+            <span id="audio" class="inline-block"><audio controls></audio></span>
+            <div class="inline-block" id="audio-right">
+                <i class="fas fa-volume-up padd"></i>
+                <i class="fas fa-sliders-h padd"></i>
+                <i class="fas fa-redo-alt padd"></i>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>

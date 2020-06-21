@@ -1,0 +1,568 @@
+body {
+    /* margin: 0; */
+    background-color: #001625;
+    color: #e0f2ff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+/*Header*/
+
+header {
+    position: fixed;
+    width: 100%;
+    /* margin-top: -5%; */
+    margin: -5% -1% 0 -1%;
+    background-color: #38131d;
+    z-index: 5;
+}
+
+header ul {
+    list-style: none;
+}
+
+header ul li {
+    display: inline-block;
+    /* padding: 0 10px; */
+    vertical-align: middle;
+}
+
+.nav-image {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+}
+
+#dashboard {
+    position: absolute;
+    right: 0;
+    margin-right: 2%;
+}
+
+#welcome {
+    color: #ff2fd2;
+    font-weight: 900;
+    font-style: oblique;
+    text-decoration: underline;
+}
+
+#search {
+    background-color: #002036;
+    border: none;
+    border-radius: 10px;
+    height: 40px;
+    width: 300px;
+    padding: 5px;
+}
+
+
+/*Main section*/
+
+#outer {
+    margin-top: 5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+main {
+    display: inline-block;
+    margin-top: 7%;
+    /* border-top: 5px groove #a4abd0; */
+    width: 65vw;
+    margin-left: 1%;
+}
+
+#aside {
+    display: inline-block;
+    vertical-align: top;
+    width: 30vw;
+    margin-top: 7%;
+    border-left: 5px groove #a4abd0;
+    /* padding: 0.5%; */
+    /* height: fit-content; */
+}
+
+
+/* Image Carousel */
+
+@keyframes tonext {
+    75% {
+        left: 0;
+    }
+    95% {
+        left: 100%;
+    }
+    98% {
+        left: 100%;
+    }
+    99% {
+        left: 0;
+    }
+}
+
+@keyframes tostart {
+    75% {
+        left: 0;
+    }
+    95% {
+        left: -300%;
+    }
+    98% {
+        left: -300%;
+    }
+    99% {
+        left: 0;
+    }
+}
+
+@keyframes snap {
+    96% {
+        scroll-snap-align: center;
+    }
+    97% {
+        scroll-snap-align: none;
+    }
+    99% {
+        scroll-snap-align: none;
+    }
+    100% {
+        scroll-snap-align: center;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    scrollbar-color: transparent transparent;
+    /* thumb and track color */
+    scrollbar-width: 0px;
+}
+
+*::-webkit-scrollbar {
+    width: 0;
+}
+
+*::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: transparent;
+    border: none;
+}
+
+* {
+    -ms-overflow-style: none;
+}
+
+#carousel ul,
+li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#carousel {
+    /* margin: 15% 20% 15% 20%; */
+    margin: 0 15%;
+    align-self: center;
+    /* height: 50vh;
+    width: 70vw; */
+    /*border: 2px solid white;*/
+    filter: drop-shadow(0 0 10px #0003);
+    perspective: 100px;
+    position: relative;
+    max-width: 40rem;
+    min-width: 10rem;
+    max-height: 50vh;
+    min-height: 10vh;
+}
+
+#carousel img {
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+}
+
+.carousel__viewport {
+    position: relative;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+}
+
+.carousel__slide {
+    position: relative;
+    flex: 0 0 100%;
+    width: 100%;
+    height: auto;
+}
+
+.carousel__slide:before {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -40%, 70px);
+    color: #fff;
+    font-size: 2em;
+}
+
+.carousel__snapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    scroll-snap-align: center;
+}
+
+@media (hover: hover) {
+    .carousel__snapper {
+        animation-name: tonext, snap;
+        animation-timing-function: ease;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+    }
+    .carousel__slide:last-child .carousel__snapper {
+        animation-name: tostart, snap;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .carousel__snapper {
+        animation-name: none;
+    }
+}
+
+.carousel:hover .carousel__snapper,
+.carousel:focus-within .carousel__snapper {
+    animation-name: none;
+}
+
+.carousel__navigation {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+}
+
+.carousel__navigation-list,
+.carousel__navigation-item {
+    display: inline-block;
+}
+
+.carousel__navigation-button {
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: darkgrey;
+    background-clip: content-box;
+    border: 0.25rem solid transparent;
+    border-radius: 50%;
+    font-size: 0;
+    transition: transform 0.1s;
+}
+
+.carousel::before,
+.carousel::after,
+.carousel__prev,
+.carousel__next {
+    position: absolute;
+    top: 0;
+    margin-top: 37.5%;
+    width: 4rem;
+    height: 4rem;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    font-size: 0;
+    outline: 0;
+}
+
+.carousel::before,
+.carousel__prev {
+    left: -1rem;
+}
+
+.carousel::after,
+.carousel__next {
+    right: -1rem;
+}
+
+.carousel::before,
+.carousel::after {
+    content: '';
+    background-color: #333;
+    background-size: 1.5rem 1.5rem;
+    background-repeat: no-repeat;
+    background-position: center center;
+    color: #fff;
+    font-size: 2.5rem;
+    line-height: 4rem;
+    text-align: center;
+    pointer-events: none;
+}
+
+.carousel::before {
+    background-image: url("assets/before.jpg");
+}
+
+.carousel::after {
+    background-image: url("assets/after.jpg");
+}
+
+
+/* Artists , HINDI SUROOR ,URBAN PUNJABI TADKA*/
+
+.main-flex {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.horizontal-list li img {
+    /* border-radius: 50%; */
+    height: 150px;
+    width: 150px;
+}
+
+.horizontal-list li p {
+    text-align: center;
+    color: #ffb576;
+    font-weight: 600;
+}
+
+.horizontal-list {
+    list-style: none;
+    /* padding-left: 0px;
+    margin-left: 5%; */
+}
+
+.horizontal-list li {
+    display: inline-block;
+    padding: 0.7em;
+}
+
+.section-heading {
+    padding: 2% 0 0 2%;
+    font-size: x-large;
+    font-style: oblique;
+    text-shadow: 4px 3px cornflowerblue;
+    text-decoration: underline;
+    color: white;
+}
+
+.rounded-image {
+    border-radius: 50%;
+}
+
+
+/* LATEST RELEASES */
+
+#latest-release {}
+
+.icon {
+    display: inline-block;
+    vertical-align: top;
+    color: #e0f2ff;
+}
+
+.release {
+    border-style: groove;
+}
+
+.mtb {
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.release-title {
+    font-weight: 600;
+    color: rgb(166, 47, 202);
+}
+
+.release-image {
+    height: 50px;
+    width: 50px;
+}
+
+.release-desc {
+    display: inline-block;
+    vertical-align: top;
+}
+
+
+/* ASIDE section */
+
+.aside-heading {
+    color: #e11f6d;
+    margin: 0 5px;
+    text-align: center;
+    font-weight: 800;
+    font-size: 1.5em;
+    font-style: italic;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.artist,
+.song {
+    /* border: 2px solid plum; */
+    margin: 2%
+}
+
+#recently-played {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.display-img {
+    height: 15%;
+    width: 10%;
+    background-size: contain;
+}
+
+.desc {
+    display: inline-block;
+    text-align: left;
+}
+
+.desc h5,
+p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.song {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+/* footer audio player */
+
+#lightbox {
+    height: 0;
+    width: 0;
+    position: fixed;
+    top: 90;
+    left: 0;
+    overflow: hidden;
+    transition: all 1s ease-in-out;
+}
+
+#lightbox:target {
+    height: 7%;
+    width: 100vw;
+    top: 93%;
+    background-color: #261780;
+    background-image: linear-gradient(#0F2027, #203A43, #2C5364);
+}
+
+#lightbox-content {
+    padding-bottom: 2%;
+    padding-left: 1%;
+    margin-bottom: 2%;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.padd {
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+#audio {
+    position: absolute;
+    left: 40%;
+    padding: 0;
+    margin-top: -0.8%;
+}
+
+#audio-right {
+    float: right;
+    margin-right: 25%;
+}
+
+#audio-left {
+    margin-left: 25%;
+}
+
+
+/* general */
+
+a {
+    text-decoration: none;
+}
+
+.shadow:hover {
+    box-shadow: 2px 2px 5px 2px #c0faff;
+}
+
+.section-shadow:hover {
+    box-shadow: 1px 1px 6px 5px #ffac65;
+}
+
+.zoom {
+    padding: 20px;
+    transition: transform .2s;
+    /* Animation */
+    /* width: 200px;
+    height: 200px; */
+    margin: 0 auto;
+}
+
+.zoom:hover {
+    transform: scale(1.5);
+    /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+
+/*Media Queries*/
+
+@media screen and (max-width:860px) {
+    #carousel {
+        margin-top: 1%;
+    }
+}
+
+@media screen and (max-width:736px) {
+    #carousel {
+        margin-top: 1%;
+    }
+    header {
+        height: auto;
+    }
+}
+
+@media screen and (max-width:640px) {
+    #carousel {
+        margin-top: 1%;
+    }
+    .song {
+        border: 2px solid #925a9d;
+        border-radius: 5px;
+    }
+    .display-img {
+        height: 20%;
+        width: 10%;
+    }
+}
+
+@media screen and (max-width:575px) {
+    #carousel {
+        margin-top: 1%;
+    }
+    .release {
+        margin: 2%;
+    }
+}
