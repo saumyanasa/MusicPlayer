@@ -3,5 +3,5 @@
 The link to the project is : https://musicplayerproject.netlify.app/
 
 ### Project snippets:
-![image](file:///Users/saumyanasa/Desktop/Screenshot%202020-07-17%20at%204.57.57%20PM.png)
+<img src="file:///Users/saumyanasa/Desktop/Screenshot%202020-07-17%20at%204.57.57%20PM.png">
 
